@@ -1,1 +1,1 @@
-def forward_difference_first_order():
+def forward_difference_first_order(f,x,h=1e-5):
