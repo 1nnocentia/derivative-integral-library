@@ -120,3 +120,32 @@ Ikuti menu untuk memilih metode turunan/integral yang ingin digunakan.
 - `eval()` digunakan untuk evaluasi fungsi dengan hati-hati (tidak aman untuk input dari user tidak terpercaya).
 
 ---
+
+
+### ➕ Metode Tambahan – Midpoint Rule
+
+**Fungsi:**  
+\[
+f(x) = x^2,\quad \text{dengan interval } [0, 1]
+\]
+
+**Deskripsi:**
+Midpoint Rule menghitung integral dengan menggunakan nilai fungsi pada titik tengah setiap subinterval.
+
+**Kode:**
+```python
+from midpointrule import midpoint_rule_n
+
+def f(x): return x**2
+a, b, n = 0, 1, 100
+
+hasil_mid = midpoint_rule_n(f, a, b, n)
+print(f"Midpoint Rule ≈ {hasil_mid:.10f}")
+```
+
+**Bandingkan dengan hasil eksak:**
+\[
+\int_0^1 x^2 dx = \frac{1}{3} \approx 0.3333
+\]
+
+Midpoint Rule cocok digunakan sebagai alternatif sederhana dan cepat untuk integral numerik, terutama bila fungsi relatif halus.
