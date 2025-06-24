@@ -19,6 +19,17 @@ def central_difference_basic(f,x,h):
     -------
     float
         Nilai aproksimasi dari turunan pertama fungsi f di titik x.
+
+    Contoh Penggunaan
+    -----------------
+    # Definisikan sebuah fungsi, misalnya f(x) = x^2
+        def f_kuadrat(x):
+           return x**2
+    ...
+    # Hitung turunan dan langkah di x = 3, h = 0,001. Turunan analitiknya adalah 2*x = 6.
+     turunan = central_difference_basic(f_kuadrat, 3, 0,01)
+     print(f"Aproksimasi turunan di x=3: {turunan:.5f}")
+    Aproksimasi turunan di x=3: 6.00001
     """
     if not callable(f):
         raise TypeError("Parameter 'f' harus berupa fungsi yang bisa dipanggil.")
