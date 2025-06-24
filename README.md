@@ -22,6 +22,7 @@ Library ini mendukung input fungsi interaktif melalui `main.py` dan dilengkapi d
 - `central_difference.py` - Metode selisih tengah (Central Difference)
 - `trapezoidal_n_order.py` - Aturan trapesium untuk integral
 - `simpson.py` - Aturan Simpson 1/3 untuk integral
+- `midpointrule.py` - Menghitung integral dengan metode Midpoint Rule (dengan `n` subinterval)
 - `function.py` - Utility fungsi input string menjadi fungsi
 - `main.py` - Program interaktif
 - `README.md` - Dokumentasi
