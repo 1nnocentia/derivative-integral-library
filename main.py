@@ -2,6 +2,7 @@ import math
 from central_difference import central_difference_basic
 from forward_difference import forward_difference_first_order, forward_difference_second_order
 from trapezoidal_n_order import trapezoidal_n_order
+from backward_difference import backward_difference_first_order as back
 
 from function import function_input
 
@@ -54,7 +55,14 @@ def menu():
                         print("Hasil: ", central_difference_basic(f, x, h))
 
                     case "3":
-                        print("Backward Difference belum diimplementasikan.")
+                        print("Kamu memilih backward difference.")
+                        function, x, h = function_input()
+
+                        def f(x):
+                            return eval(function, {"x": x, "math": math})
+
+                        print("Hasil: ", back(f, x, h))
+                        # print("Backward Difference belum diimplementasikan.")
                     case _:
                         print("Pilihan tidak valid.")
             case "2":
