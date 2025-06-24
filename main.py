@@ -1,6 +1,6 @@
 import math
 from central_difference import central_difference_basic
-from forward_difference import forward_difference_first_order
+from forward_difference import forward_difference_first_order, forward_difference_second_order
 from trapezoidal_n_order import trapezoidal_n_order
 
 from function import function_input
@@ -28,7 +28,22 @@ def menu():
                         print("Kamu memilih forward difference.")
                         print("1. First Order")
                         print("2. Second Order")
-                        imp_choice = print("Yang mana ingin kamu gunakan(1/2): ")
+                        imp_choice = input("Yang mana ingin kamu gunakan(1/2): ")
+                        match imp_choice:
+                            case "1":
+                                print("Kamu memilih First Order.")
+                                function, x, h = function_input()
+                                def f(x):
+                                    return eval(function, {"x": x, "math": math})
+                                print("Hasil: ", forward_difference_first_order(f, x, h))
+                            case "2":
+                                print("Kamu memilih Second Order.")
+                                function, x, h = function_input()
+                                def f(x):
+                                    return eval(function, {"x": x, "math": math})
+                                print("Hasil: ", forward_difference_second_order(f, x, h))
+                            case _:
+                                print("Pilihan tidak valid.")
                     case "2":
                         print("Kamu memilih central difference.")
                         function, x, h = function_input()
