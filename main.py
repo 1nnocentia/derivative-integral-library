@@ -1,6 +1,7 @@
 import math
 from central_difference import central_difference_basic
 from forward_difference import forward_difference_first_order
+from trapezoidal_n_order import trapezoidal_n_order
 
 from function import function_input
 
@@ -48,7 +49,14 @@ def menu():
                 sub_choice = input("Masukkan pilihan (1/2): ")
                 match sub_choice:
                     case "1":
-                        print("Trapezoidal Rule belum diimplementasikan.")
+                        print("Kamu memilih Trapezoidal Rule.")
+                        function, a, b, n = function_input(integral=True)
+
+                        def f(x):
+                            return eval(function, {"x": x, "math": math})
+                        
+                        hasil = trapezoidal_n_order(f, a, b, n)
+                        print(f"Hasil integral numerik: {hasil}")
                     case "2":
                         print("Simpson's Rule belum diimplementasikan.")
                     case _:
