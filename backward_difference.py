@@ -1,4 +1,4 @@
-def forward_difference_first_order(f,x,h=1e-5):
+def backward_difference_first_order(f,x,h=1e-5):
     """
     Menghitung aproksimasi turunan pertama dari sebuah fungsi di titik x
     menggunakan metode selisih mundur (backward difference).
