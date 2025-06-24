@@ -1,9 +1,9 @@
 def forward_difference_first_order(f,x,h=1e-5):
     """
     Menghitung aproksimasi turunan pertama dari sebuah fungsi di titik x
-    menggunakan metode selisih maju (forward difference).
+    menggunakan metode selisih mundur (backward difference).
 
-    Rumus: f'(x) ≈ (f(x + h) - f(x)) / h
+    Rumus: f'(x) ≈ (f(x) - f(x - h)) / h
 
     Parameters
     ----------
@@ -33,39 +33,39 @@ def forward_difference_first_order(f,x,h=1e-5):
     if not callable(f):
         raise TypeError("Parameter 'f' harus berupa fungsi yang bisa dipanggil.")
     
-    return (f(x + h) - f(x)) / h
+    return (f(x) - f(x - h)) / h
 
-def forward_difference_second_order(f, x, h=1e-5):
-    """
-    Menghitung aproksimasi turunan kedua dari sebuah fungsi di titik x
-    menggunakan metode selisih maju (forward difference).
+# def forward_difference_second_order(f, x, h=1e-5):
+#     """
+#     Menghitung aproksimasi turunan kedua dari sebuah fungsi di titik x
+#     menggunakan metode selisih maju (forward difference).
 
-    Rumus: f''(x) ≈ (f(x + 2h) - 2*f(x + h) + f(x)) / h^2
+#     Rumus: f''(x) ≈ (f(x + 2h) - 2*f(x + h) + f(x)) / h^2
 
-    Parameters
-    ----------
-    f : Fungsi yang akan diturunkan. Harus menerima satu argumen numerik (float atau int)
-        dan mengembalikan nilai numerik.
-    x : Titik di mana turunan kedua akan dihitung.
-    h : Ukuran langkah kecil (step size). Default-nya adalah 1e-5.
+#     Parameters
+#     ----------
+#     f : Fungsi yang akan diturunkan. Harus menerima satu argumen numerik (float atau int)
+#         dan mengembalikan nilai numerik.
+#     x : Titik di mana turunan kedua akan dihitung.
+#     h : Ukuran langkah kecil (step size). Default-nya adalah 1e-5.
 
-    Returns
-    -------
-    float
-        Nilai aproksimasi dari turunan kedua fungsi f di titik x.
+#     Returns
+#     -------
+#     float
+#         Nilai aproksimasi dari turunan kedua fungsi f di titik x.
 
-    Contoh Penggunaan
-    -----------------
-    # Definisikan sebuah fungsi, misalnya f(x) = x^3
-        def f_kubik(x):
-         return x**3
-    ...
-    # Hitung turunan kedua di x = 2. Turunan analitiknya adalah 6*x = 12.
-     turunan_kedua = forward_difference_second_order(f_kubik, 2)
-     print(f"Aproksimasi turunan kedua di x=2: {turunan_kedua:.5f}")
-    Aproksimasi turunan kedua di x=2: 12.00006
-    """
-    if not callable(f):
-        raise TypeError("Parameter 'f' harus berupa fungsi yang bisa dipanggil.")
+#     Contoh Penggunaan
+#     -----------------
+#     # Definisikan sebuah fungsi, misalnya f(x) = x^3
+#         def f_kubik(x):
+#          return x**3
+#     ...
+#     # Hitung turunan kedua di x = 2. Turunan analitiknya adalah 6*x = 12.
+#      turunan_kedua = forward_difference_second_order(f_kubik, 2)
+#      print(f"Aproksimasi turunan kedua di x=2: {turunan_kedua:.5f}")
+#     Aproksimasi turunan kedua di x=2: 12.00006
+#     """
+#     if not callable(f):
+#         raise TypeError("Parameter 'f' harus berupa fungsi yang bisa dipanggil.")
 
-    return (f(x + 2*h) - 2*f(x + h) + f(x)) / (h**2)
+#     return (f(x + 2*h) - 2*f(x + h) + f(x)) / (h**2)
